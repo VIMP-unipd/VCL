@@ -1,0 +1,238 @@
+
+:root {
+    --color-primary: #9B0014;       /* Rosso Padova (Pantone 1807 C) */
+    --color-secondary: #059669;     /* Verde Smeraldo (Focus, CTA) */
+    --color-background: #f8fafc;    /* Sfondo Molto Chiaro */
+    --color-text: #1f2937;          /* Testo principale */
+    --color-light-gray: #e5e7eb;    /* Bordi e Separatori */
+    --font-stack: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: var(--font-stack);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    margin-top: 0;
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* --- Hero Section (Rosso Padova) --- */
+
+.hero-section {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 100px 20px 80px 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem; 
+    color: white; 
+    margin-bottom: 10px;
+}
+
+.hero-section .intro {
+    font-size: 1.3rem;
+    font-weight: 300;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.hero-section .university-logo {
+    display: block;
+    width: 100px; 
+    height: auto;
+    margin: 0 auto 15px auto; 
+}
+
+
+/* --- Header e Navigazione (Rosso Padova) --- */
+
+header {
+    background-color: var(--color-primary);
+    padding: 1rem 0;
+    position: relative; 
+    width: 100%;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav a {
+    color: white; 
+    margin-left: 25px;
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+nav a:hover {
+    color: var(--color-secondary);
+}
+
+/* --- Layout Principale e Card --- */
+
+main {
+    padding: 0 20px 40px 20px; 
+    max-width: 1100px;
+    margin: 0 auto; 
+}
+
+section {
+    background: white; 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); 
+    margin-bottom: 30px;
+}
+
+/* Card Prossimo Incontro e Card Regole */
+.card {
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    border-left: 5px solid var(--color-secondary); 
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Pulsanti CTA e Form */
+.link-meeting a, .subscription-form button {
+    display: inline-block;
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 50px; 
+    font-weight: 700;
+    box-shadow: 0 5px 0 0 #047857; 
+    transition: all 0.2s ease-out;
+    border: none;
+    cursor: pointer;
+}
+
+.link-meeting a:hover, .subscription-form button:hover {
+    background-color: #047857;
+    box-shadow: 0 2px 0 0 #047857;
+    transform: translateY(3px);
+}
+
+.subscription-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.subscription-form input[type="email"] {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+
+/* --- Tabelle Generali --- */
+
+table {
+    width: 100%;
+    table-layout: fixed; 
+    border-collapse: collapse; 
+    margin-top: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-light-gray); 
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+table thead {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid var(--color-light-gray); 
+    word-wrap: break-word; 
+}
+
+table tbody tr:nth-child(even) { background-color: var(--color-background); }
+
+table tbody tr:hover {
+    background-color: #f0f4f8; 
+}
+
+/* Larghezze Colonne per Schedule/Archive (4 colonne) */
+table th:nth-child(1), table td:nth-child(1) { width: 18%; } /* 1. When/Where (Ridotta) */
+table th:nth-child(2), table td:nth-child(2) { width: 20%; } /* 2. Presented by (Aumentata) */
+table th:nth-child(3), table td:nth-child(3) { width: 45%; } /* 3. What (Titolo) */
+table th:nth-child(4), table td:nth-child(4) { width: 17%; } /* 4. Link/Resources (Ridotta) */
+
+
+/* --- Sovrascrittura Tabelle Specifiche (Suggested Papers, 3 colonne) --- */
+.paper-list table th:nth-child(1), 
+.paper-list table td:nth-child(1) { 
+    width: 20%; /* 1. Proposed by */
+}
+
+.paper-list table th:nth-child(2), 
+.paper-list table td:nth-child(2) { 
+    width: 60%; /* 2. What (Titolo Paper e Dettagli) */
+}
+
+.paper-list table th:nth-child(3), 
+.paper-list table td:nth-child(3) { 
+    width: 20%; /* 3. Link */
+}
+
+
+/* --- Footer --- */
+footer {
+    text-align: center; /* CENTRATURA DEL CONTENUTO */
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--color-light-gray);
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+footer small {
+    display: block; 
+    margin-top: 5px;
+    opacity: 0.7; 
+}
